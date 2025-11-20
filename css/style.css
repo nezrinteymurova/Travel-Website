@@ -83,13 +83,17 @@ color: var(--primary-color);
 header{
     padding: 1rem 0;
     /*background: var(--primary-color);*/
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 6; /*Səhifədə elementlərin üst-üstə gəlməsində hansı daha öndə görünsün deyə təbəqə sırası yaradır.*/
     width: 100%;
     height: 100;
+    transition: all 0.3s ease-in-out;
+}
 
+header.sticky{
+    background: var(--primary-color);
 }
 .logo img{
     width: 10% ;
@@ -321,8 +325,101 @@ form input, select{
     object-fit: cover;
     margin: 0 auto;
     display: block;
+    transition: 0.5s ease-in;
+}
+
+.agency-right-side .img::after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    z-index: -2;
+    height: 100%;
+    width: 75%;
+}
+
+.agency-right-side .img img:hover{
+    transform: scale(0.95);
 }
 /*=================About Close=======================*/
+/*================Choose Place ==================Start*/
+#choose-place{
+    padding: 6rem 0;
+}
 
+.choose-wrapper{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+}
+
+.lg-img{
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 96%;
+    transition: all 0.5s;
+}
+
+.lg-img:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0 , 0, 0.5);
+}
+.lg-img:hover{
+    transform: scale(1.02);
+}
+
+.img-content{
+    position: absolute;
+    bottom: 20px;
+}
+
+.img-content h2{
+    padding: 0 2rem;
+    color: var(--white-color);
+}
+
+.hidden-content{
+    padding: 0.5rem 2rem;
+    color: var(--white-color);
+    transform: translateY(140%);
+    transition: all 0.5s ease-in-out;
+}
+
+.hidden-content i{
+
+    padding: 0.2rem 0.2rem 0 0;
+}
+
+.lg-img:hover .hidden-content{
+
+    transform: translateY(0%);
+}
+
+.price-label{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 0.5rem 1rem;
+    transform: rotate(-90deg);
+}
+
+.row-wise-img{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+}
+
+/*================Choose Place ==================Close*/
 
 
