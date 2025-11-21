@@ -24,6 +24,7 @@ html{
     margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
+    overflow: hidden;
 }
 
 img{
@@ -422,4 +423,107 @@ form input, select{
 
 /*================Choose Place ==================Close*/
 
+/*===============Static Counter============Start*/
+#static-counter {
+    padding: 6rem 0;
+    background: url("../img/reviewbgimg-2.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 4;
+}
 
+#static-counter::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba(0, 0 , 0, 0.5);
+}
+
+.static-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.static-icons{
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.static-icons i{
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    height: 120px;
+    width: 120px;
+    transition: all 0.3s ease-in;
+
+}
+
+.numbers{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.static-icons i:hover{
+    background: var(--primary-color);
+    border: none;
+    transform: translateY(-20%);
+}
+/*===============Static Counter============Close*/
+/*===============Top Destination============Start*/
+#top-destination{
+    padding: 6rem 0;
+}
+
+.top-destination-wrapper{
+    width: 100%;
+}
+
+.carousel{
+    position: relative;
+    cursor: pointer;
+}
+.carousel:hover::before{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0 , 0, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+.carousel-img-overlay{
+    width: 100%;
+}
+/*===============Top Destination============Close*/
+
+.hidden-content-carousel{
+    padding: 0.5rem 2rem;
+    color: var(--white-color);
+    transform: translateY(140%);
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel-img-overlay i{
+    padding-right: 1rem;
+}
+.carousel:hover .hidden-content-carousel{
+    transform: translateY(0%);
+}
+
+.carousel:hover{
+    transform: scale(1.2);
+}
