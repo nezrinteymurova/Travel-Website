@@ -18,14 +18,14 @@ const swiper = new Swiper(".swiper",{
     
     speed:400,
     spaceBetween:100
-})
+});
 
 const swiper2 = new Swiper(".swiper2", { // ".swiper2" sinfinə malik HTML elementində yeni bir Swiper instansiyası yaradırıq.
     slidesPerView: 3, // Ekranda eyni anda görünən slayderlərin sayını (bu halda 3) müəyyən edir.
     spaceBetween: 35, // Slayderlər arasında piksel ilə məsafəni (bu halda 35px) təyin edir.
     slidesPerGroup: 1, // Hər dəfə irəlilədikdə və ya geri çəkildikdə sürüşdürüləcək slayderlərin sayını (bu halda 1) təyin edir.
     loop: true, // Slayderi dövrü (loop) rejimdə aktivləşdirir. Son slayd göstərildikdən sonra birincini göstərməyə davam edir.
-   fade:true,
+    fade:true,
     centerSlide: true, // Aktiv slaydı mərkəzdə göstərməyə çalışır. 'slidesPerView' 1-dən çox olduqda faydalıdır.
     grabCursor: true, // Slayder üzərinə gələrkən kursorun "tutmaq" (grab) işarəsinə çevrilməsini təmin edir.
     loopFillGroupWithBlank: true, // Əgər 'loop' aktivdirsə və slayderlərin ümumi sayı 'slidesPerGroup' ilə tam bölünmürsə, boş slayderlər əlavə edərək qrupu tamamlayır.
@@ -36,4 +36,48 @@ const swiper2 = new Swiper(".swiper2", { // ".swiper2" sinfinə malik HTML eleme
 
     speed: 400, // Sürüşmə (tranzisiya) animasiyasının sürətini millisaniyə ilə (bu halda 400ms) müəyyən edir.
     spaceBetween: 100, // **QEYD:** Bu xüsusiyyət yuxarıda artıq təyin edilmişdir. Bu, yuxarıdakı 'spaceBetween: 35' dəyərini ləğv edərək onu 100px olaraq yenidən təyin edir.
+    breakpoints:{
+    320:{
+        slidesPerView: 1,
+    },
+    768:{
+        slidesPerView: 2,
+    },
+    968:{
+        slidesPerView: 3,
+    }
+},
+
 });
+
+const swiper3 = new Swiper(".swiper3", {
+    slidesPerView: 2,
+    spaceBetween: 35,
+    slidesPerGroup: 1,
+    loop: true,
+    fade: true,
+    centeredSlides: true,
+    grabCursor: true,
+    loopFillGroupWithBlank: true,
+
+    autoplay: {
+        delay: 5000,
+    },
+    speed: 400,
+
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1,
+        },
+        // when window width is >= 480px
+        768: {
+            slidesPerView: 2,
+        },
+        // when window width is >= 640px
+        968: {
+            slidesPerView: 2,
+        },
+    },
+});
+

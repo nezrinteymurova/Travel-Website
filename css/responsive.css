@@ -96,4 +96,36 @@ form{
     right: 0;
     width: 90%;
 }
+/*choose-place*/
+ .choose-wrapper{
+    grid-template-columns: 1fr;
+}
+
+.row-wise-img{
+    grid-template-columns: 1fr;
+}
+
+.img-content{
+    bottom: 10px;
+}
+
+.static-wrapper{
+    grid-template-columns: repeat(2,1fr);
+}
+
+/*video*/
+#az-trip video{
+    position: relative;
+    padding: 2rem 0;
+}
+
+.video-content h2{
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.video-content span{
+    font-size: 1rem;
+}
+
 }

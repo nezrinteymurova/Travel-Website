@@ -83,7 +83,6 @@ color: var(--primary-color);
 /*=================Header Start======================*/
 header{
     padding: 1rem 0;
-    /*background: var(--primary-color);*/
     position: fixed;
     top: 0;
     left: 0;
@@ -94,8 +93,9 @@ header{
 }
 
 header.sticky{
-    background: var(--primary-color);
+    background: var(--primary-color); 
 }
+
 .logo img{
     width: 10% ;
     height: 20%;
@@ -234,11 +234,9 @@ main{
     color: transparent;
     -webkit-text-stroke: 1px var(--white-color);
 }
-
 /*=================Showcase Close=======================*/
 
-/*=================Search Start=======================*/
-
+/*=================Search Start =======================*/
 #location-search{
     transform: translateY(-170%);
 }
@@ -270,56 +268,52 @@ form input, select{
 }
 /*=================Search Close=======================*/
 
+/*===========About Start===========*/
 
-/*=================About Start=======================*/
-.about-content-wrapper{
+.about-content-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 3rem;
     margin: 3rem 0;
 }
-.about-content-wrapper h2{
-    font-size: 2.2rem;
-    line-height: 1.3;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 1rem;
-    font-family: "ubuntu", sans-serif;
-}
-.about-content-wrapper h2 span{
+
+.about-content-wrapper h2 span {
     color: var(--primary-color);
+    font-family: "ubuntu";
+    font-weight: 700;
+
 }
 
-.about-content-wrapper ul{
+.about-content-wrapper ul {
     list-style: none;
 }
 
-.about-content-wrapper ul .icons{
+.about-content-wrapper ul .icons {
     display: flex;
     align-items: center;
     margin: 1rem 0;
 }
-.about-content-wrapper ul .icons i{
-    background: var(--primary-color);
-    width: 40px;
-    height: 40px;
+
+.about-content-wrapper ul .icons i {
+   background: var(--primary-color);
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     color: var(--white-color);
-    font-size: 20px;
-    padding: 0;
+    font-size: 15px;
+    padding: 0; 
 }
 
 .about-content-wrapper ul p{
-    margin-left: 1rem;
+    margin-left: 0.8rem;
 }
 
 .agency-right-side .img{
     position: relative;
 }
-
 .agency-right-side .img img{
     width: 75%;
     height: 100%;
@@ -328,7 +322,6 @@ form input, select{
     display: block;
     transition: 0.5s ease-in;
 }
-
 .agency-right-side .img::after{
     content: "";
     position: absolute;
@@ -336,82 +329,81 @@ form input, select{
     left: 55px;
     bottom: 0;
     right: 0;
-    background-color: var(--primary-color);
-    z-index: -2;
+    background: var(--primary-color);
+    width: 70%;
     height: 100%;
-    width: 75%;
+    z-index: -2;
 }
 
 .agency-right-side .img img:hover{
     transform: scale(0.95);
 }
-/*=================About Close=======================*/
-/*================Choose Place ==================Start*/
-#choose-place{
+/*===========About Close===========*/
+
+/* ===================Choose Place===================Start */
+#choose-place {
     padding: 6rem 0;
 }
 
-.choose-wrapper{
+.choose-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 2rem;
 }
 
-.lg-img{
+.lg-img {
     position: relative;
+    transition: all 0.5s;
     cursor: pointer;
     width: 100%;
     height: 96%;
-    transition: all 0.5s;
 }
 
-.lg-img:hover::before{
+.lg-img:hover::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0 , 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
-.lg-img:hover{
+
+.lg-img:hover {
     transform: scale(1.02);
 }
 
-.img-content{
+.img-content {
     position: absolute;
     bottom: 20px;
 }
 
-.img-content h2{
+.img-content h2 {
     padding: 0 2rem;
     color: var(--white-color);
 }
 
-.hidden-content{
+.hidden-content {
     padding: 0.5rem 2rem;
     color: var(--white-color);
     transform: translateY(140%);
     transition: all 0.5s ease-in-out;
 }
-
 .hidden-content i{
-
-    padding: 0.2rem 0.2rem 0 0;
+    padding: 0.2rem 0.2rem  0 0;
 }
 
-.lg-img:hover .hidden-content{
-
+.lg-img:hover .hidden-content {
     transform: translateY(0%);
 }
 
-.price-label{
-    background-color: var(--primary-color);
+.price-label {
+    background: var(--primary-color);
     color: var(--white-color);
+    padding: 0.5rem 1rem;
     position: absolute;
     top: 50px;
     right: 0;
-    padding: 0.5rem 1rem;
     transform: rotate(-90deg);
 }
 
@@ -420,10 +412,9 @@ form input, select{
     grid-template-columns: repeat(3,1fr);
     grid-gap: 2rem;
 }
+/* ===================Choose Place===================Close */
 
-/*================Choose Place ==================Close*/
-
-/*===============Static Counter============Start*/
+/* ===================Static Number===================Start */
 #static-counter {
     padding: 6rem 0;
     background: url("../img/reviewbgimg-2.jpg") no-repeat center center/cover;
@@ -432,18 +423,18 @@ form input, select{
     z-index: 4;
 }
 
-#static-counter::after{
+#static-counter::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     z-index: -1;
-    background: rgba(0, 0 , 0, 0.5);
 }
 
-.static-wrapper{
+.static-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
@@ -453,64 +444,66 @@ form input, select{
     padding: 2rem 0;
 }
 
-.static-icons{
+.static-icons {
     color: var(--white-color);
     cursor: pointer;
 }
 
-.static-icons i{
+.static-icons i {
     font-size: 3rem;
     padding: 2rem;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 2px solid var(--primary-color);
     cursor: pointer;
-    height: 120px;
-    width: 120px;
     transition: all 0.3s ease-in;
-
 }
 
-.numbers{
+.numbers {
     font-size: 2.5rem;
     font-weight: 600;
     margin-top: 1rem;
 }
 
-.static-icons i:hover{
+.static-icons i:hover {
     background: var(--primary-color);
     border: none;
     transform: translateY(-20%);
 }
-/*===============Static Counter============Close*/
-/*===============Top Destination============Start*/
-#top-destination{
+/* ===================Static Number===================Close */
+/*====================Top Destination Start=================*/
+
+#top-destination {
     padding: 6rem 0;
 }
 
-.top-destination-wrapper{
+.top-destination-wrapper {
     width: 100%;
 }
 
-.carousel{
+.carousel {
     position: relative;
     cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
 }
-.carousel:hover::before{
+
+.carousel:hover::before {
     content: "";
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0 , 0, 0.5);
-    transition: all 0.5s ease-in-out;
+    background: rgba(0, 0, 0, 0.5);
 }
-.carousel-img-overlay{
+
+.carousel-img-overlay {
     width: 100%;
 }
-/*===============Top Destination============Close*/
 
-.hidden-content-carousel{
+.hidden-content-carousel {
     padding: 0.5rem 2rem;
     color: var(--white-color);
     transform: translateY(140%);
@@ -520,10 +513,706 @@ form input, select{
 .carousel-img-overlay i{
     padding-right: 1rem;
 }
+
 .carousel:hover .hidden-content-carousel{
     transform: translateY(0%);
 }
-
 .carousel:hover{
     transform: scale(1.2);
 }
+/*=============================Top Destination Close=======================*/
+
+/*===============Video Background==================Start*/
+#az-trip{
+    padding: 6rem 0;
+    position: relative;
+}
+#az-trip video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  max-height: 650px;
+}
+
+.video-bg {
+  position: relative;
+}
+
+.video-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.video-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.video-content h2 {
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  color: var(--white-color);
+  font-family: "ubuntu";
+  margin-bottom: 1rem;
+}
+
+.video-content span {
+  font-size: 1.2rem;
+  margin: 0 1.5rem;
+}
+/*===============Video Background==================Close*/
+
+/* ============ Travel Countires ============ Start*/
+#travel-countries {
+  padding: 6rem 0;
+}
+
+.travel-countries-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  grid-gap: 2rem;
+}
+
+.countries-content {
+  margin-top: 2rem;
+}
+
+.countries-content ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.countries-content ul li {
+  margin: 1.5rem 0;
+}
+/* ============ Travel Countires ============ Close*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root{
+    --primary-color: #2095ae;
+    --white-color: #fff;
+    --light-gray-color: #ddd;
+    --blue-color:
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+html{
+    font-size: 16px;
+}
+
+/*=================Utality Classes Start======================*/
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+img{
+    display: block; /*Element tam bir xətti tutur, Altında boş yer qalmır*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Bu şəkli kəssə belə konteynerin içini tam doldurur. Nəticə: şəkil sıxılmır, amma kənarlardan bir az kəsilə bilər.*/
+}
+
+a{
+    text-decoration: none;
+}
+
+.heading-normal-txt{
+    font-size: 1rem;
+    letter-spacing: 6px;
+    color: var(--primary-color);
+}
+
+.headings{
+    font-size: 3rem;
+    font-family: "ubuntu";
+    padding-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.headings span{
+color: var(--primary-color);
+}
+
+.secondary-headings{
+    font-size: 2.5rem;
+    font-family: "ubuntu";
+    padding: 1rem 0;
+}
+
+.lead{
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.primary-btn{
+    width: 50%;
+    outline: none;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: var(--white-color);
+    cursor: pointer;
+}
+/*=================Utality Classes Close======================*/
+
+/*=================Header Start======================*/
+header{
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6; /*Səhifədə elementlərin üst-üstə gəlməsində hansı daha öndə görünsün deyə təbəqə sırası yaradır.*/
+    width: 100%;
+    height: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+header.sticky{
+    background: var(--primary-color); 
+}
+
+.logo img{
+    width: 10% ;
+    height: 20%;
+    object-fit: cover;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li{
+    margin: 0 0.9rem;
+    position: relative;
+}
+
+nav ul li a{
+color: var(--white-color);
+font-size: 1.1rem;
+}
+
+nav ul li::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--white-color);
+    opacity: 0;
+    transition: all 0.3s ease-in;/*Element hər hansı dəyişikliyi (rəng, ölçü, opacity…) yumşaq animasiya ilə keçsin deyə.*/
+}
+
+nav ul li:hover::before{
+    opacity: 1;
+    width: 100%;
+}
+
+.btn{
+    font-size: 1.3rem;
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+/*=================Header Close======================*/
+
+/*=================Showcase Start=======================*/
+main{
+    position: relative; /*valideynin içində nisbi mövqe yaradır.*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.swiper{
+    height: 100vh;
+}
+
+.slide-container{
+    width: 100%;
+}
+
+.slide-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-overlay{
+    position: absolute;/*elementi səhifədən ayırır və sərbəst şəkildə yerləşdirməyə imkan verir.*/
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-family: "ubuntu";
+    transform: translate(-50%, -50%);
+}
+
+.img-overlay p{
+    font-size: 1rem;
+    letter-spacing: 8px;
+    color: var(--white-color);
+    animation: animate 4s forwards;
+}
+
+.img-overlay h2{
+    font-size: 5rem;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    animation: animate 4s forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay{
+    position: relative;
+}
+
+.overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0 , 0, 0.4);
+}
+
+@keyframes animate{ /*Bu xüsusi animasiya yaratmaq üçündür.Mətnlərin yavaş-yavaş görünməsi bu animasiya ilə olur.*/
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    70%{
+        opacity: 1;
+        transform: translateX(-0%);
+    }
+}
+
+.img-overlay h2 span{
+    color: transparent;
+    -webkit-text-stroke: 1px var(--white-color);
+}
+/*=================Showcase Close=======================*/
+
+/*=================Search Start =======================*/
+#location-search{
+    transform: translateY(-170%);
+}
+
+.form-wrapper{
+    background-color: rgba(0, 0 , 0, 0.6);
+    padding: 2rem;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control{
+    width: 100%;
+}
+
+form input, select{
+    padding: 0.6rem;
+    outline: none;
+    font-size: 1.1rem;
+    color: #000;
+    border: 1px solid var(--light-gray-color);
+    margin: 0 0.4rem;
+    border-radius: 4px;
+}
+/*=================Search Close=======================*/
+
+/*===========About Start===========*/
+
+.about-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 3rem;
+    margin: 3rem 0;
+}
+
+.about-content-wrapper h2 span {
+    color: var(--primary-color);
+    font-family: "ubuntu";
+    font-weight: 700;
+
+}
+
+.about-content-wrapper ul {
+    list-style: none;
+}
+
+.about-content-wrapper ul .icons {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.about-content-wrapper ul .icons i {
+   background: var(--primary-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--white-color);
+    font-size: 15px;
+    padding: 0; 
+}
+
+.about-content-wrapper ul p{
+    margin-left: 0.8rem;
+}
+
+.agency-right-side .img{
+    position: relative;
+}
+.agency-right-side .img img{
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    transition: 0.5s ease-in;
+}
+.agency-right-side .img::after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 55px;
+    bottom: 0;
+    right: 0;
+    background: var(--primary-color);
+    width: 70%;
+    height: 100%;
+    z-index: -2;
+}
+
+.agency-right-side .img img:hover{
+    transform: scale(0.95);
+}
+/*===========About Close===========*/
+
+/* ===================Choose Place===================Start */
+#choose-place {
+    padding: 6rem 0;
+}
+
+.choose-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+}
+
+.lg-img {
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 100%;
+    height: 96%;
+}
+
+.lg-img:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lg-img:hover {
+    transform: scale(1.02);
+}
+
+.img-content {
+    position: absolute;
+    bottom: 20px;
+}
+
+.img-content h2 {
+    padding: 0 2rem;
+    color: var(--white-color);
+}
+
+.hidden-content {
+    padding: 0.5rem 2rem;
+    color: var(--white-color);
+    transform: translateY(140%);
+    transition: all 0.5s ease-in-out;
+}
+.hidden-content i{
+    padding: 0.2rem 0.2rem  0 0;
+}
+
+.lg-img:hover .hidden-content {
+    transform: translateY(0%);
+}
+
+.price-label {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    transform: rotate(-90deg);
+}
+
+.row-wise-img{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+}
+/* ===================Choose Place===================Close */
+
+/* ===================Static Number===================Start */
+#static-counter {
+    padding: 6rem 0;
+    background: url("../img/reviewbgimg-2.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 4;
+}
+
+#static-counter::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.static-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.static-icons {
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.static-icons i {
+    font-size: 3rem;
+    padding: 2rem;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.numbers {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.static-icons i:hover {
+    background: var(--primary-color);
+    border: none;
+    transform: translateY(-20%);
+}
+/* ===================Static Number===================Close */
+/*====================Top Destination Start=================*/
+
+#top-destination {
+    padding: 6rem 0;
+}
+
+.top-destination-wrapper {
+    width: 100%;
+}
+
+.carousel {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.carousel:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-img-overlay {
+    width: 100%;
+}
+
+.hidden-content-carousel {
+    padding: 0.5rem 2rem;
+    color: var(--white-color);
+    transform: translateY(140%);
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel-img-overlay i{
+    padding-right: 1rem;
+}
+
+.carousel:hover .hidden-content-carousel{
+    transform: translateY(0%);
+}
+.carousel:hover{
+    transform: scale(1.2);
+}
+/*=============================Top Destination Close=======================*/
+
+/*===============Video Background==================Start*/
+#az-trip{
+    padding: 6rem 0;
+    position: relative;
+}
+#az-trip video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  max-height: 650px;
+}
+
+.video-bg {
+  position: relative;
+}
+
+.video-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.video-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.video-content h2 {
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  color: var(--white-color);
+  font-family: "ubuntu";
+  margin-bottom: 1rem;
+}
+
+.video-content span {
+  font-size: 1.2rem;
+  margin: 0 1.5rem;
+}
+/*===============Video Background==================Close*/
+
+/* ============ Travel Countires ============ Start*/
+#travel-countries {
+  padding: 6rem 0;
+}
+
+.travel-countries-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  grid-gap: 2rem;
+}
+
+.countries-content {
+  margin-top: 2rem;
+}
+
+.countries-content ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.countries-content ul li {
+  margin: 1.5rem 0;
+}
+/* ============ Travel Countires ============ Close*/
+
+.countries-content ul li i{
+  margin: 0.5rem 0;
+}
+
+.slider-content-wrapper{
+    overflow: hidden;
+}
+
+
