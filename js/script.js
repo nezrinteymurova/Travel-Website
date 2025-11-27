@@ -38,4 +38,30 @@ countersEl.forEach((counters) => {
             counters.textContent=dataCeil
         }
     }
-})
+});
+
+
+
+function updateSearchForm() {
+    const selector = document.getElementById('search-type-selector');
+    const selectedType = selector.value;
+
+    const tourInputs = document.getElementById('tour-inputs');
+    const hotelInputs = document.getElementById('hotel-inputs');
+    const restaurantInputs = document.getElementById('restaurant-inputs');
+
+  
+    tourInputs.style.display = 'none';
+    hotelInputs.style.display = 'none';
+    restaurantInputs.style.display = 'none';
+
+    if (selectedType === 'tour') {
+        tourInputs.style.display = 'flex';
+    } else if (selectedType === 'hotel') {
+        hotelInputs.style.display = 'flex';
+    } else if (selectedType === 'restaurant') {
+        restaurantInputs.style.display = 'flex';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateSearchForm); 

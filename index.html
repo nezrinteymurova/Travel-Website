@@ -23,12 +23,13 @@
       <div class="btn">
         <i class="fas fa-times close-btn"></i>
       </div>
-      <li><a href="#">Əsas səhifə</a></li>
-      <li><a href="#">Haqqımızda</a></li>
-      <li><a href="#">Turlar</a></li>
-      <li><a href="#">Otellər</a></li>
-      <li><a href="#">Restoranlar</a></li>
-      <li><a href="#">Əlaqə</a></li>
+      <li><a href="#main-page">Əsas səhifə</a></li>
+      <li><a href="#about">Haqqımızda</a></li>
+      <li><a href="#choose-place">Turlar</a></li>
+      <li><a href="#hotel-section-header">Otellər</a></li>
+      <li><a href="#restaurant-slider-section">Restoranlar</a></li>
+      <li><a href="#client-section">Müştəri rəyləri</a></li>
+      <li><a href="#main-footer">Əlaqə</a></li>
     </ul>
     <div class="btn">
       <i class="fas fa-bars menu-btn"></i>
@@ -38,7 +39,7 @@
 </header>
 <!--===========Header==================== Close-->
 <!--===============Showcase ================Start-->
-<main>
+<main id="main-page">
 <div class="slide-container swiper">
   <div class="slide-content swiper-wrapper">
     <div class="overlay swiper-slide">
@@ -70,12 +71,21 @@
 </main>
 <!--===============Showcase ================Close-->
 <!--===============Search Location ================Start-->
-<section id="location-search">
-  <div class="container">
-    <div class="form-wrapper">
-      <form action="#">
-        <input type="text" placeholder="Hara gedirsiniz?" class="form-control"/>
-        <select class="form-control">
+
+
+
+<section  id="location-search">
+  <div class="search-form-container">
+    <select id="search-type-selector" onchange="updateSearchForm()">
+      <option value="tour"> Turlar </option>
+      <option value="hotel"> Otellər </option>
+      <option value="restaurant"> Restoranlar </option>
+    </select>
+
+    <form class="search-forms-inputs">
+      <div id="tour-inputs" class="input-group">
+        <input type="text" placeholder="Tur kəşf edin!">
+         <select >
           <option value="Destination">Səyahət edəcəyiniz bölgə</option>
           <option value="Destination">Bakı</option>
           <option value="Destination">Qəbələ</option>
@@ -86,16 +96,36 @@
           <option value="Destination">Naxçıvan</option>
           <option value="Destination">Lənkəran</option>
         </select>
-        <select class="form-control">
+        <select >
           <option value="duration">Səyahət müddəti</option>
           <option value="day-1">1 gün</option>
           <option value="2-4 days">2-4 gün</option>
           <option value="5-7 days">5-7 gün</option>
           <option value="7+ days">7+ gün</option>
         </select>
-        <button type="button" class="primary-btn">Axtar</button>
-      </form>
-    </div>
+      </div>
+      <div id="hotel-inputs" class="input-group" style="display: none;">
+        <input type="text" placeholder="Otel adını daxil edin">
+        <input type="date" >
+        <input type="date" >
+      </div>
+      <div id="restaurant-inputs" class="input-group" style="display: none;">
+        <input type="text" placeholder="Restoranın adı / Mətbəx növü">
+         <select >
+          <option value="Destination">Şəhər / Bölgə</option>
+          <option value="Destination">Bakı</option>
+          <option value="Destination">Qəbələ</option>
+          <option value="Destination">Şəki</option>
+          <option value="Destination">Qusar(Şahdağ)</option>
+          <option value="Destination">Göygöl</option>
+          <option value="Destination">İsmayıllı</option>
+          <option value="Destination">Naxçıvan</option>
+          <option value="Destination">Lənkəran</option>
+        </select>
+        <input type="time">
+      </div>
+      <button onclick="handleSearch()" type="button">Axtar</button>
+    </form>
   </div>
 </section>
 <!--===============Search Location ================Close-->
@@ -104,10 +134,13 @@
   <div class="container">
     <div class="about-content-wrapper">
       <div class="agency-left-side">
-        <p class="heading-normal-txt">ƏN YAXŞI SƏYAHƏT AGENTLİYİ </p>
+        <p class="heading-normal-txt">Səyahətinizin hər anını planlaşdıran vizual bələdçiniz </p>
         <h2 class="headings">AZƏRBAYCANI <span>BİZİM BƏLƏDÇİMİZLƏ</span> KƏŞF EDİN!</h2>
-        <p class="lead">Yaxşı turizm imkanlarına malik istənilən ölkəni seçə bilərsiniz. Agentliyimiz rahatlıq, təhlükəsizlik və yüksək xidmət standartlarını əsas götürərək səyahətinizi daha rahat edir. Sizin üçün ən uyğun marşrutu hazırlayır, hər detalı diqqətlə planlaşdırırıq.</p><br>
-        <p class="lead"> Otellər, istirahət zonaları və müxtəlif xidmətlər üzrə geniş seçim imkanları təqdim edirik. Peşəkar komandamız sizin üçün komfortlu və yadda qalan səyahət təmin edir.</p>
+        <p class="lead">Biz, Azərbaycana səyahət etməyi xəyal edən hər kəs üçün ilham və dəqiqlik mənbəyiyik. 
+                Platformamız — paytaxt Bakının alovlu simvolizmindən tutmuş, Şəkinin ipək yollarına və Naxçıvanın qədimliyinə qədər, 
+                ölkənin ən zəngin və gizli guşələrini bir araya gətirir. </p>
+              <br>
+        <p class="lead"> Bizim missiyamız sadədir: Səyahət planlaması prosesini ləzzətli bir təcrübəyə çevirmək. 20 illik yerli bilik bazamızın gücü ilə, sizə sadəcə bələdçilik edirik. Bizim platforma sizin səyahət azadlığınızdır. Yolunuzu işıqlandıran rəqəmsal mayakınızla Azərbaycana doğru macəranıza başlayın!</p>
         <ul>
           <li>
             <div class="icons">
@@ -118,7 +151,7 @@
           <li>
             <div class="icons">
               <i class="fa fa-check"></i>
-              <p>150 Tur İstiqaməti</p>
+              <p>150+ Təsdiqlənmiş Kəşf İstiqaməti</p>
             </div>
           </li>
           <li>
@@ -142,8 +175,7 @@
 <!--===============Choose Place ================Start-->
 <section id="choose-place">
   <div class="container">
-    <p class="heading-normal-txt">Gedəcəyiniz yeri seçin</p>
-    <h2 class="headings">Məhşur<span>Turlar</span></h2>
+    <h2 class="headings" style="text-align: left;">Ən Çox Seçilən <span>Tur Paketləri</span></h2>
     <div class="choose-wrapper">
       <div class="img-left-side">
         <div class="lg-img">
@@ -230,24 +262,24 @@
   <div class="container">
     <div class="static-wrapper">
       <div class="static-icons">
-        <i class="fa fa-plane-departure"></i>
+        <i class="fa fa-user" aria-hidden="true"></i>
         <p class="numbers" data-ceil="600">600</p>
-        <p class="txt">Səyahət sayı</p>
+        <p class="txt">Səyahətçi sayı</p>
       </div>
        <div class="static-icons">
         <i class="fa fa-home"></i>
         <p class="numbers" data-ceil="300">300</p>
-        <p class="txt">Səyahət sayı</p>
+        <p class="txt">Otellərin sayı</p>
       </div>
        <div class="static-icons">
-        <i class="fa fa-ship"></i>
+        <i class="fa fa-globe"></i>
         <p class="numbers" data-ceil="250">250</p>
-        <p class="txt">Səyahət sayı</p>
+        <p class="txt">Turların sayı</p>
       </div>
        <div class="static-icons">
-        <i class="fa fa-ticket"></i>
+        <i class="fa fa-cutlery"></i>
         <p class="numbers" data-ceil="100">100</p>
-        <p class="txt">Səyahət sayı</p>
+        <p class="txt">Restoranların sayı</p>
       </div>
     </div>
   </div>
@@ -257,97 +289,82 @@
 <section id="top-destination">
   <div class="container">
     <p class="heading-normal-txt">Məhşur məkanlar</p>
-    <h2 class="headings">Azərbaycanın<span>Gəzməli Yerləri</span></h2>
+    <h2 class="headings">Azərbaycanın <span>Gəzməli Yerləri</span></h2>
     <div class="top-destination-wrapper swiper2">
       <div class="swiper-wrapper">
         <div class="carousel swiper-slide">
           <img src="./img/TD1_Ateshgah_of_Baku.jpg" alt=""/>
           <div class="carousel-img-overlay">
             <div class="img-content">
-              <h2 class="fa fa-location-dot">ATƏŞGAH</h2>
+              <h2 class="heading-normal-txt2">Atəşgah</h2>
               <div class="hidden-content-carousel">
-                <span>4 Tur Paketi</span>
+                <span>Daha çox məlumat üçün </span>
                 <a href="#">
-                  <span>Kəşf et</span>
+                  <span>Daxil ol</span>
                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-          </div>
-          <div class="price-label">
-            <p>15% endirim</p>
           </div>
         </div>
          <div class="carousel swiper-slide">
           <img src="./img/TD4-Shirvanshahlar.jpg" alt=""/>
           <div class="carousel-img-overlay">
             <div class="img-content">
-              <h2 class="fa fa-location-dot">Şirvanşahlar</h2>
+              <h2 class="heading-normal-txt2">Şirvanşahlar</h2>
               <div class="hidden-content-carousel">
-                <span>4 Tur Paketi</span>
+                <span>Daha çox məlumat üçün </span>
                 <a href="#">
-                  <span>Kəşf et</span>
+                  <span>Daxil ol</span>
                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-          </div>
-          <div class="price-label">
-            <p>15% endirim</p>
           </div>
         </div>
          <div class="carousel swiper-slide">
           <img src="./img/TD5-Maiden Tower.jpg" alt=""/>
           <div class="carousel-img-overlay">
             <div class="img-content">
-              <h2 class="fa fa-location-dot">Qız qalası</h2>
+              <h2 class="heading-normal-txt2">Qız qalası</h2>
               <div class="hidden-content-carousel">
-                <span>4 Tur Paketi</span>
+                <span>Daha çox məlumat üçün </span>
                 <a href="#">
-                  <span>Kəşf et</span>
+                  <span>Daxil ol</span>
                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-          </div>
-          <div class="price-label">
-            <p>15% endirim</p>
           </div>
         </div>
          <div class="carousel swiper-slide">
           <img src="./img/TD7-Quba_xinaliq.jpg" alt=""/>
           <div class="carousel-img-overlay">
             <div class="img-content">
-              <h2 class="fa fa-location-dot">Xınalıq</h2>
+              <h2 class="heading-normal-txt2">Xınalıq</h2>
               <div class="hidden-content-carousel">
-                <span>4 Tur Paketi</span>
+                <span>Daha çox məlumat üçün </span>
                 <a href="#">
-                  <span>Kəşf et</span>
+                  <span>Daxil ol</span>
                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-          </div>
-          <div class="price-label">
-            <p>15% endirim</p>
           </div>
         </div>
          <div class="carousel swiper-slide">
           <img src="./img/TD8-Qobustan.jpg" alt=""/>
           <div class="carousel-img-overlay">
             <div class="img-content">
-              <h2 class="fa fa-location-dot">Qobustan</h2>
+              <h2 class="heading-normal-txt2">Qobustan</h2>
               <div class="hidden-content-carousel">
-                <span>4 Tur Paketi</span>
+                <span>Daha çox məlumat üçün </span>
                 <a href="#">
-                  <span>Kəşf et</span>
+                  <span>Daxil ol</span>
                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
-          </div>
-          <div class="price-label">
-            <p>15% endirim</p>
           </div>
         </div>
       </div>
@@ -373,206 +390,313 @@
 </section>
 <!--===============Video Background ================Close-->
 
-<!--===============Travel Countries==================Start-->
-<section id="travel-countries">
-  <div class="container">
-    <p class="heading-normal-txt">EN MEHSUR</p>
-    <h2 class="headings">SEYAHET<span>MEKANLARI</span></h2>
+<!--===============Hotels==================Start-->
 
-    <!--Qebele-->
-  <div class="travel-countries-wrapper">
-    <div class="countries-content">
-      <h2 class="secondary-headings">Qebele, Azerbaycan</h2>
-      <p class="lead">
-        Ucsuz-bucaqsız meşələri, sərin dağ havası və əsrarəngiz tarixi ilə Qəbələ hər bir turisti özünə heyran edən unikal bir məkandır. Böyük Qafqazın ətəyində yerləşən bu gözəl şəhər, həm macəra sevənlər, həm də sakitlik axtaranlar üçün ideal tətil istiqamətidir. 
-      </p>
-      <ul>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Nohur golu</li>
-          <li><i class="fa fa-location-dot"></i>Tufandag</li>
-          <li><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</li>
-        </div>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Qebelend</li>
-          <li><i class="fa fa-location-dot"></i>Mucux selalesi</li>
-          <li><i class="fa fa-location-dot"></i>Nic kendi</li>
-        </div>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Seherqala</li>
-          <li><i class="fa fa-location-dot"></i>Duruca kendi</li>
-          <li><i class="fa fa-location-dot"></i>Tarix Muzeyi</li>
-        </div>
-      </ul>
-      <button type="button" class="primary-btn">Butun turlar <i class="fa fa-arrow-right"></i></button>
-    </div> 
-    <div class="slider-content-wrapper swiper3">
+  <div id="hotel-section-header">
+      <h1>Məşhur Otellər</h1>
+      <p>Xəyalınızdakı Tətil Başlayır: Komfort və Lüksün Kəsişmə Nöqtəsi Olan Otellərimiz Sizi Gözləyir.</p>
+  </div>
+
+<div class="cards-gallery-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel-1.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Four Seasons Hotel Baku</h2>
+      <p class="card-description"> Köhnə Şəhərin qapıları qarşısında lüks və zərifliyi yaşayın.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel2.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Fairmont Hotel<br> Baku</h2>
+      <p class="card-description"> Alov Qülləsi mənzərəli oteldə qalaraq dəniz panoramasından zövq alın.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel3.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Jumeirah Bilgah Beach Hotel</h2>
+      <p class="card-description"> Su parkları, restoranlar və dəniz kənarında tam tətil üçün Bakının ən böyük istirahət komplekslərindən biri.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel4.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Holiday Inn <br>Baku</h2>
+      <p class="card-description">Şəhərin mərkəzində həm mədəniyyətdən həzz alın, həm də fitness və SPA xidmətlərimizlə enerjinizi bərpa edin.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel5.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Dinamo Hotel <br> Baku</h2>
+      <p class="card-description"> Şəhərin mərkəzində həm mədəniyyətdən həzz alın, həm də fitness və SPA xidmətlərimizlə enerjinizi bərpa edin.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel6.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">The Ritz-Carlton, Baku</h2>
+      <p class="card-description"> Şəxsi məkanlarda özünüzü xüsusi hiss edin və şəhərin ən prestijli ünvanlarından birində dincəlin.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel7.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">Hilton Hotel<br> Baku</h2>
+      <p class="card-description"> Xəzərin mənzərəsi qarşısında yüksək səviyyəli xidmətlərlə dincəlin.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header">
+      <div class="card-image" style="background-image: url(./img/hotel8.jpg);"></div>
+    <div class="overlay-info">
+      <div class="rating">
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star full">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="review-count">(250)</span>
+
+      </div>
+      <div class="price">$129 /Gecə</div>
+    </div>
+    </div>
+    <div class="card-body">
+      <h2 class="card-title">JW Marriott Absheron</h2>
+      <p class="card-description">İş və ticarət mərkəzində mükəmməl yerləşmənin rahatlığını kəşf edin.</p>
+      <button class="card-button"> Rezervasiya et</button>
+    </div>
+  </div>
+</div>
+<!--===============Hotels==================Close-->
+<!--===============Restaurants==================Start-->
+<section id="restaurant-slider-section">
+  <div class="restaurant-section-header">
+    <h1>Məhşur Restoranlar</h1>
+    <p>Ölkənin ən zərif və unikal dad məkanları</p>
+  </div>
+    <h2>Seçilmiş Məkanlar</h2>
+    <div class="slider-container swiper3">
       <div class="swiper-wrapper">
-             <div class="carousel swiper-slide">
-                <img src="./img/selale_qebele.jpg" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-             <div class="carousel swiper-slide">
-                <img src="./img/nohur-lake-gabala.jpg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Nohur gol</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-              <div class="carousel swiper-slide">
-                <img src="./img/qebelend_qebele.jpeg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Qebelend</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-             <div class="carousel swiper-slide">
-                <img src="./img/Yeddi gozel selalesi_qebele.jpeg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 7 days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
+        <div class="swiper-slide">
+          <div class="restaurant-card">
+          <div class="card-image">
+            <img src="./img/Sahil_bar_restaurant.jpg" alt="">
+          </div>
+          <div class="card-info">
+            <h3>Sahil Bar Restoranı</h3>
+            <p>Ənənəvi Azərbaycan Mətbəxi</p>
+            <div class="card-details">
+              <span class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span class="price-range">$$$</span>
+            </div>
+          </div>
+        </div>
+        </div>
+       <div class="swiper-slide">
+<div class="restaurant-card">
+          <div class="card-image">
+            <img src="./img/Shah_restaurant.jpg" alt="">
+          </div>
+          <div class="card-info">
+            <h3>Şah Restoranı</h3>
+            <p>Ənənəvi Azərbaycan Mətbəxi</p>
+            <div class="card-details">
+              <span class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span class="price-range">$$</span>
+            </div>
+          </div>
+        </div>
+       </div>
+      <div class="swiper-slide">
+                        <div class="restaurant-card">
+          <div class="card-image">
+            <img src="./img/Galateya_restaurant.jpg" alt="">
+          </div>
+          <div class="card-info">
+            <h3>Galateya Restoranı</h3>
+            <p>Ənənəvi Azərbaycan Mətbəxi</p>
+            <div class="card-details">
+              <span class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+              </span>
+              <span class="price-range">$$$</span>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
-  <!--Baki-->
-  <div class="baku-content">
-        <div class="slider-content-wrapper swiper3">
-      <div class="swiper-wrapper">
-             <div class="carousel swiper-slide">
-                <img src="./img/selale_qebele.jpg" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-             <div class="carousel swiper-slide">
-                <img src="./img/nohur-lake-gabala.jpg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Nohur gol</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-              <div class="carousel swiper-slide">
-                <img src="./img/qebelend_qebele.jpeg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Qebelend</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 10 Days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
-             <div class="carousel swiper-slide">
-                <img src="./img/Yeddi gozel selalesi_qebele.jpeg" alt="" />
-                <div class="carousel-img-overlay">
-                    <div class="img-content">
-                        <h2><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</h2>
-                        <div class="hidden-content-carousel">
-                             <span><i class="fa fa-clock"></i> 7 days</span>
-                             <span><i class="fa fa-user"></i> 12+</span>
-                             <span><i class="fa fa-location-dot"></i> Qebele</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="price-label">
-                    <p>15% off</p>
-                </div>
-             </div>
+      <div class="swiper-slide">
+                <div class="restaurant-card">
+          <div class="card-image">
+            <img src="./img/mari-vanna_restaurant.jpg" alt="">
+          </div>
+          <div class="card-info">
+            <h3>Mari Vanna Restoranı</h3>
+            <p>Ənənəvi Azərbaycan Mətbəxi</p>
+            <div class="card-details">
+              <span class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span class="price-range">$$</span>
+            </div>
+          </div>
         </div>
       </div>
-          <div class="countries-content">
-      <h2 class="secondary-headings">Qebele, Azerbaycan</h2>
-      <p class="lead">
-        Ucsuz-bucaqsız meşələri, sərin dağ havası və əsrarəngiz tarixi ilə Qəbələ hər bir turisti özünə heyran edən unikal bir məkandır. Böyük Qafqazın ətəyində yerləşən bu gözəl şəhər, həm macəra sevənlər, həm də sakitlik axtaranlar üçün ideal tətil istiqamətidir.
-      </p>
-      <ul>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Nohur golu</li>
-          <li><i class="fa fa-location-dot"></i>Tufandag</li>
-          <li><i class="fa fa-location-dot"></i>Yeddi gozel selalesi</li>
+      <div class="swiper-slide">
+        <div class="restaurant-card">
+          <div class="card-image">
+            <img src="./img/latitude-longitude-bar_restaurant.jpg" alt="">
+          </div>
+          <div class="card-info">
+            <h3>Latitude Longitude Bar Restoranı</h3>
+            <p>Ənənəvi Azərbaycan Mətbəxi</p>
+            <div class="card-details">
+              <span class="rating">
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="fas fa-star filled"></i>
+                <i class="far fa-star"></i>
+              </span>
+              <span class="price-range">$$$</span>
+            </div>
+          </div>
         </div>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Qebelend</li>
-          <li><i class="fa fa-location-dot"></i>Mucux selalesi</li>
-          <li><i class="fa fa-location-dot"></i>Nic kendi</li>
-        </div>
-        <div class="country-names">
-          <li><i class="fa fa-location-dot"></i>Seherqala</li>
-          <li><i class="fa fa-location-dot"></i>Duruca kendi</li>
-          <li><i class="fa fa-location-dot"></i>Tarix Muzeyi</li>
-        </div>
-      </ul>
-      <button type="button" class="primary-btn">Butun turlar <i class="fa fa-arrow-right"></i></button>
-    </div> 
-  </div>
+      </div> 
+      </div>
+    </div>
 </section>
-<!--===============Travel Countries==================Close-->
+<!--===============Restaurants==================Close-->
+
 <!--===============Client Says==================Start-->
-<section class="client-section">
+<section id="client-section">
   <div class="client-header">
     <h1>Müştəri Rəyləri</h1>
     <p>Müştərilərimiz bizim haqqımızda bunu deyirlər: onların rəyləri müstəsna xidmətə olan bağlılığımızı əks etdirir.</p>
@@ -582,13 +706,13 @@
     <div class="client-card">
       <div class="quote-content">
         <span class="quote-icon">❝</span>
-        <p>"Bu, bəlkə də həyatımın ən rahat və təşkilatlı səyahəti idi. Hər şey saat kimi işləyirdi – hava limanında qarşılanmadan tutmuş, oteldə yerləşməyə qədər. Bələdçimiz (Eldar bəy) bölgə haqqında o qədər dərin biliklərə malik idi ki, turumuz sadəcə gəzinti deyil, əsl mədəni kəşf oldu. Peşəkarlığınıza görə təşəkkür edirəm!</p>
-      <img src="./img/client-say-1.jpg"  class="client-photo-large">
+        <p>"Bu, bəlkə də həyatımın ən rahat və təşkilatlı səyahəti idi. Bələdçimiz (Eldar bəy) bölgə haqqında o qədər dərin biliklərə malik idi ki, turumuz sadəcə gəzinti deyil, əsl mədəni kəşf oldu. Peşəkarlığınıza görə təşəkkür edirəm!</p>
+        <img src="./img/client-say-1.jpg"  class="client-photo-large">
       </div>
       <div class="client-info">
         <img src="./img/client-say-2.jpg" class="client-avatar">
         <div>
-          <p class="client-name">Cavid Muradov</p>
+          <p class="client-name">Michael Anderson</p>
           <p class="client-title">Proqram meneceri</p>
         </div>
       </div>
@@ -602,17 +726,32 @@
       <div class="client-info">
         <img src="./img/client-say-1.jpg" class="client-avatar">
         <div>
-          <p class="client-name">Arif Əliyev</p>
-          <p class="client-title">Daimi müştəri</p>
+          <p class="client-name">Kenji Nakamura</p>
+          <p class="client-title">Proqram təminatı mühəndisi</p>
         </div>
       </div>
     </div>
+      <div class="client-card">
+      <div class="quote-content">
+        <span class="quote-icon">❝</span>
+        <p>"Rezervasiya etməmişdən əvvəl kifayət qədər araşdırma apardım və sizin şirkətin həm xidmət, həm də münasib qiymət balansı ilə fərqləndiyini gördüm. Hər detal düşünülmüşdü, heç bir problem yaşamadıq. Ailəlikcə çox gözəl vaxt keçirdik. Gələcək səfərlərimizdə də ilk seçimimiz siz olacaqsınız."</p>
+      <img src="./img/about2.jpg"  class="client-photo-large">
+      </div>
+      <div class="client-info">
+        <img src="./img/client-say-1.jpg" class="client-avatar">
+        <div>
+          <p class="client-name">Sofia Martinez</p>
+          <p class="client-title">Maliyyə analitiki/p>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>
 
 <!--===============Client Says==================Close-->
 <!--===============Footer==================Start-->
-<footer class="main-footer">
+<footer id="main-footer">
   <div class="footer-container">
     <div class="footer-col join-community">
       <h2>Bizə qoşulun!</h2>
@@ -646,12 +785,13 @@
     <div class="footer-col useful-links">
       <h2>Faydalı Keçidlər</h2>
       <ul class="link-list">
-      <li><a href="#">Əsas səhifə</a></li>
-      <li><a href="#">Haqqımızda</a></li>
-      <li><a href="#">Turlar</a></li>
-      <li><a href="#">Otellər</a></li>
-      <li><a href="#">Restoranlar</a></li>
-      <li><a href="#">Əlaqə</a></li>
+      <li><a href="#main-page">Əsas səhifə</a></li>
+      <li><a href="#about">Haqqımızda</a></li>
+      <li><a href="#choose-place">Turlar</a></li>
+      <li><a href="#hotel-section-header">Otellər</a></li>
+      <li><a href="#restaurant-slider-section">Restoranlar</a></li>
+      <li><a href="#client-section">Müştəri rəyləri</a></li>
+      <li><a href="#main-footer">Əlaqə</a></li>
       </ul>
     </div>
     <div class="footer-col contact-info">

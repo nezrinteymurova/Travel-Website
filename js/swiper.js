@@ -50,34 +50,21 @@ const swiper2 = new Swiper(".swiper2", { // ".swiper2" sinfinə malik HTML eleme
 
 });
 
-const swiper3 = new Swiper(".swiper3", {
-    slidesPerView: 2,
-    spaceBetween: 35,
-    slidesPerGroup: 1,
-    loop: true,
-    fade: true,
-    centeredSlides: true,
-    grabCursor: true,
-    loopFillGroupWithBlank: true,
-
-    autoplay: {
-        delay: 5000,
+var restaurantSlider = new Swiper(".swiper3", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+  },
+  breakpoints: {
+    640: { 
+        slidesPerView: 2, 
+        spaceBetween: 20 
     },
-    speed: 400,
-
-    breakpoints: {
-        // when window width is >= 320px
-        320: {
-            slidesPerView: 1,
-        },
-        // when window width is >= 480px
-        768: {
-            slidesPerView: 2,
-        },
-        // when window width is >= 640px
-        968: {
-            slidesPerView: 2,
-        },
-    },
+    1024: { 
+        slidesPerView: 3, 
+        spaceBetween: 30 },
+  },
 });
-
